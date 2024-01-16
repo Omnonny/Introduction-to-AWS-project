@@ -1,14 +1,19 @@
-from flask import Flask
+import argparse
 import os
 import sys
 import json
+import shutil
 
-proj = Flask(__name__)
+def load_config():
 
-@proj.route("/")
-def hello():
-    return "<p>Hello</p>"
-    
+    pass
+
+
+
+def organize_files(source_dir, destination_dir, config):
+    pass
+
+
 
 
 
