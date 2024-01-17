@@ -1,1 +1,8 @@
-
+{
+    "file_types": {
+        "images": ["jpg", "png"],
+        "documents": ["pdf", "docx"],
+        "videos": ["mp4", "mkv"]
+    },
+    "destination_folder": "organized_files"
+}
