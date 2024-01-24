@@ -5,11 +5,16 @@ import json
 import shutil
 
 def load_config():
-
-    pass
-
-
-
+    try:
+        with open(config_file_path, 'r') as config_file:
+            config_data = json.load(config_file)
+            return config_data
+    except FileNotFoundError:
+        print(f'Error: Configuration file "{config_file_path}" not found.')
+        return None
+    except json.JSONDecodeError:
+        print(f'Error: Invalid JSON format in configuration file "{config_file_path}".')
+        return None
 def organize_files(source_dir, destination_dir, config):
     file_types = config.get('file_types', {})
     destination_folder = config.get('destination_folder', 'organized_files')
