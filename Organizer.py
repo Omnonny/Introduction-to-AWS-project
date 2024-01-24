@@ -11,7 +11,15 @@ def load_config():
 
 
 def organize_files(source_dir, destination_dir, config):
-    pass
+    file_types = config.get('file_types', {})
+    destination_folder = config.get('destination_folder', 'organized_files')
+
+    if not os.path.exists(destination_dir):
+        os.makedirs(destination_dir)
+
+    for filename in os.listdir(source_dir):
+        source_path = os.path.join(source_dir, filename)
+        
 
 
 
